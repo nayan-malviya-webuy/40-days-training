@@ -20,34 +20,87 @@
         <div class="flex justify-center items-center ">
             <i class="fa-solid fa-bars-staggered mx-3 text-3xl"></i>
             <img src="https://uk.webuy.com/img/logo.svg" alt="CEX" class="mx-3 h-12" />
-            <input type="search" placeholder="What you want to buy?" class="w-200 mx-3 border rounded-xl h-10 bg-white text-black ps-4 text-xl ">
-            <div>
+            <input type="search" placeholder="What you want to buy?"
+                class="w-200 mx-3 border rounded-xl h-10 bg-white text-black ps-4 text-xl ">
+
+            <div class="flex flex-col items-center m-4 font-medium">
                 <i class="fa-regular fa-user"></i>
                 <span>Account</span>
             </div>
-            <div>
+            <div class="flex flex-col items-center m-4 font-medium">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <span>
                     Basket
                 </span>
             </div>
 
-            <button>
+            <button class="rounded-full bg-white text-black py-2 px-4 mx-2">
                 Sell to CEX
             </button>
         </div>
 
-        <nav>
-
+        <nav class="d-flex justify-center items-center text-center font-medium mt-2">
+            <a href="#">Home</a>
+            <a href="#" class="m-5">Products</a>
+            <a href="#">About</a>
         </nav>
     </header>
 
-    <section>
-        
-    </section>
+    <main class="min-h-[550px]">
+        <h3 class="ms-4 mt-4">Home > <span class="font-medium">My Account</span></h3>
 
-    <footer>
+        <section class="ms-30 mt-15">
+            <h2 class="font-semibold text-3xl">Your Profile</h2>
 
+            <section class="p-6 border rounded border-gray-400 me-4 mt-3 py-3">
+                <div class="flex justify-between">
+                    <h3 class="font-bold text-xl">Personal Information</h3>
+                    <button class="font-bold text-white bg-black px-2 rounded-xl">
+                        Edit
+                    </button>
+                </div>
+
+
+                <div class="flex gap-140 mt-4">
+                    <div class="flex flex-col gap-1 ">
+                        <span class="text-sm font-bold">First Name</span>
+                        <span>Nayan</span>
+                    </div>
+                    <div class="flex flex-col gap-1 ">
+                        <span class="text-sm font-bold">Last Name</span>
+                        <span>Malviya</span>
+                    </div>
+                </div>
+
+            </section>
+            
+
+            <section class="p-6 border border-gray-400 rounded me-4 mt-6 py-3">
+                <div class="flex justify-between">
+                    <h3 class="font-bold text-xl">Personal Information</h3>
+                    <button class="font-bold text-white bg-black px-2 rounded-xl">
+                        Edit
+                    </button>
+                </div>
+
+
+                <div class="flex gap-140 mt-4">
+                    <div class="flex flex-col gap-1 ">
+                        <span class="text-sm font-bold">First Name</span>
+                        <span>Nayan</span>
+                    </div>
+                    <div class="flex flex-col gap-1 ">
+                        <span class="text-sm font-bold">Last Name</span>
+                        <span>Malviya</span>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white text-sm text-center py-4">
+        © All site contents copyright 1999-2026, CeX Ltd. All trademarks acknowledged. E&OE.
     </footer>
 </body>
 
