@@ -21,6 +21,8 @@
     <main class="w-100 mx-auto mt-7 min-h-[550px] w-[70%] mb-4">
         <section>
             <h3 class="text-3xl font-medium text-center">Complete HTML Form</h3>
+
+            <!-- method should be post... but I used get bcs I wanna show another html page on submission -->
             <form action="register.html" method="get" class="mt-2 border border-gray-300 p-4">
 
                 <h4 class="text-2xl">Personal Information</h4>
@@ -29,14 +31,14 @@
                     <div class="flex flex-col">
                         <label for="name">Name :</label>
                         <input type="text" name="name" id="name" placeholder="Enter Your Name"
-                            class="border rounded ps-2 w-[80%] mt-1" minlength="2" maxlength="35"
-                            pattern="[A-Za-z ]{3,}">
+                            class="border rounded ps-2 w-[80%] mt-1" minlength="3" maxlength="35"
+                            pattern="[A-Za-z ]{3,35}" required>
                     </div>
 
                     <div class="flex flex-col">
                         <label for="email">Email :</label>
                         <input type="email" name="email" id="email" placeholder="Enter Your Email"
-                            class="border rounded ps-2 w-[80%] mt-1">
+                            class="border rounded ps-2 w-[80%] mt-1" required>
                     </div>
 
                     <div class="flex flex-col">
@@ -58,13 +60,13 @@
                     <div class="flex flex-col">
                         <label for="website">Website URL:</label>
                         <input type="url" name="web-url" id="website" placeholder="Enter Your Website URL"
-                            class="border rounded ps-2 w-[80%] mt-1">
+                            class="border rounded ps-2 w-[80%] mt-1" required>
                     </div>
 
                     <div class="flex flex-col">
                         <label for="age">Age:</label>
                         <input type="number" name="age" id="age" placeholder="Enter Your Age"
-                            class="border rounded ps-2 w-[80%] mt-1">
+                            class="border rounded ps-2 w-[80%] mt-1" min="18" max="120" required>
                     </div>
 
                 </section>
@@ -77,13 +79,13 @@
                         <label>Gender:</label>
 
                         <div class="flex gap-2 ms-4">
-                            <input type="radio" name="gender" id="male" value="Male">
+                            <input type="radio" name="gender" id="male" value="Male" required>
                             <label for="male">Male</label>
 
                             <input type="radio" name="gender" id="female" value="Female">
                             <label for="female">Female</label>
 
-                            <input type="radio" name="other" id="other" value="other">
+                            <input type="radio" name="gender" id="other" value="other">
                             <label for="other">Other</label>
                         </div>
                     </div>
@@ -111,31 +113,28 @@
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="country">Country :</label>
-                        <select name="country" id="country" class="border rounded border-gray-300">
-                            <option value="">select your country</option>
-                            <option value="India">India</option>
-                            <option value="China">China</option>
-                            <option value="Russia">russia</option>
+                        <label for="country">Country:</label>
+                        <select name="country" id="country" class="border rounded border-gray-300 p-1" required>
+                            <option value="">Select Country</option>
                         </select>
                     </div>
 
                     <div class="flex flex-col">
                         <label for="dob">Date Of Birth :</label>
                         <input type="date" name="dob" id="dob" placeholder="Enter Your DOB"
-                            class="border rounded ps-2 w-[80%] mt-1">
+                            class="border rounded ps-2 w-[80%] mt-1" max="2008-11-11" min="1900-01-01" required>
                     </div>
 
                     <div class="flex flex-col">
                         <label for="name">Time Of Birth :</label>
                         <input type="time" name="tob" id="tob" placeholder="Enter Your TOB"
-                            class="border rounded ps-2 w-[80%] mt-1">
+                            class="border rounded ps-2 w-[80%] mt-1" required>
                     </div>
 
                     <div class="flex flex-col">
                         <label for="dnt">Date and Time :</label>
-                        <input type="datetime" name="dnt" id="dnt" placeholder="Enter Your Date and Time"
-                            class="border rounded ps-2 w-[80%] mt-1">
+                        <input type="datetime-local" name="dnt" id="dnt" placeholder="Enter Your Date and Time"
+                            class="border rounded ps-2 w-[80%] mt-1" min="1900-01-01T00:00" required>
                     </div>
 
                 </section>
@@ -148,7 +147,7 @@
                     <div class="flex flex-col">
                         <label for="bio">About Yourself:</label>
                         <textarea name="bio" id="bio" placeholder="Enter something about yourself"
-                            class="border rounded ps-2 w-[80%] mt-1"></textarea>
+                            class="border rounded ps-2 w-[80%] mt-1" maxlength="300"></textarea>
                     </div>
 
                     <!-- Range -->
@@ -167,7 +166,8 @@
                     <!-- File -->
                     <div class="flex flex-col">
                         <label for="resume">Upload Resume:</label>
-                        <input type="file" name="resume" id="resume" class="w-[80%] mt-1 border p-1 rounded-sm">
+                        <input type="file" name="resume" id="resume" class="w-[80%] mt-1 border p-1 rounded-sm"
+                            accept=".pdf">
                     </div>
 
                 </section>
@@ -186,6 +186,45 @@
     <footer class="bg-black text-white text-sm text-center py-4">
         © All site contents copyright 1999-2026, CeX Ltd. All trademarks acknowledged. E&OE.
     </footer>
+
+
+    <script>
+        const countrySelect = document.getElementById("country");
+
+        async function loadCountries() {
+            try {
+                const response = await fetch(
+                    "https://cdn.jsdelivr.net/npm/countries-list@3.4.1/countries.min.json"
+                );
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch countries");
+                }
+
+                const data = await response.json();
+
+                const countries = Object.values(data);
+
+                countries.sort((a, b) =>
+                    a.name.localeCompare(b.name)
+                );
+
+                countries.forEach(country => {
+                    const option = document.createElement("option");
+
+                    option.value = country.name;
+                    option.textContent = country.name;
+
+                    countrySelect.appendChild(option);
+                });
+
+            } catch (error) {
+                console.error("Country loading error:", error);
+            }
+        }
+
+        loadCountries();
+    </script>
 </body>
 
 </html>
