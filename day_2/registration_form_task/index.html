@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Register Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <header class="bg-[#e20a03] text-white flex justify-between items-center px-10 py-4">
+        <h3 class="text-bold text-3xl">My Form</h3>
+        <nav class="flex gap-7">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+
+    <main class="w-100 mx-auto mt-7 min-h-[550px] w-[70%] mb-4">
+        <section>
+            <h3 class="text-3xl font-medium text-center">Complete HTML Form</h3>
+            <form action="register.html" method="get" class="mt-2 border border-gray-300 p-4">
+
+                <h4 class="text-2xl">Personal Information</h4>
+                <section class="grid grid-cols-3 gap-4 w-full mt-3">
+
+                    <div class="flex flex-col">
+                        <label for="name">Name :</label>
+                        <input type="text" name="name" id="name" placeholder="Enter Your Name"
+                            class="border rounded ps-2 w-[80%] mt-1" minlength="2" maxlength="35"
+                            pattern="[A-Za-z ]{3,}">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="email">Email :</label>
+                        <input type="email" name="email" id="email" placeholder="Enter Your Email"
+                            class="border rounded ps-2 w-[80%] mt-1">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="password">Password :</label>
+                        <input type="password" name="password" id="password" placeholder="Enter Your Password"
+                            class="border rounded ps-2 w-[80%] mt-1"
+                            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+                            title="Minimum 8 characters with uppercase, lowercase, number and special character"
+                            required>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Enter Your Phone Number"
+                            class="border rounded ps-2 w-[80%] mt-1" pattern="[6-9][0-9]{9}" maxlength="10"
+                            title="Enter a valid 10-digit Indian mobile number" required>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="website">Website URL:</label>
+                        <input type="url" name="web-url" id="website" placeholder="Enter Your Website URL"
+                            class="border rounded ps-2 w-[80%] mt-1">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" id="age" placeholder="Enter Your Age"
+                            class="border rounded ps-2 w-[80%] mt-1">
+                    </div>
+
+                </section>
+
+
+                <h4 class="text-2xl mt-10">Additional Fields</h4>
+                <section class="grid grid-cols-3 gap-4 w-full mt-3">
+
+                    <div class="flex flex-col">
+                        <label>Gender:</label>
+
+                        <div class="flex gap-2 ms-4">
+                            <input type="radio" name="gender" id="male" value="Male">
+                            <label for="male">Male</label>
+
+                            <input type="radio" name="gender" id="female" value="Female">
+                            <label for="female">Female</label>
+
+                            <input type="radio" name="other" id="other" value="other">
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col">
+                        <label>Skills:</label>
+
+                        <span class="flex gap-2">
+                            <div>
+                                <input type="checkbox" name="skills" id="html" value="HTML">
+                                <label for="html">HTML</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" name="skills" id="css" value="CSS">
+                                <label for="css">CSS</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" name="skills" id="js" value="JavaScript">
+                                <label for="js">JavaScript</label>
+                            </div>
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="country">Country :</label>
+                        <select name="country" id="country" class="border rounded border-gray-300">
+                            <option value="">select your country</option>
+                            <option value="India">India</option>
+                            <option value="China">China</option>
+                            <option value="Russia">russia</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="dob">Date Of Birth :</label>
+                        <input type="date" name="dob" id="dob" placeholder="Enter Your DOB"
+                            class="border rounded ps-2 w-[80%] mt-1">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="name">Time Of Birth :</label>
+                        <input type="time" name="tob" id="tob" placeholder="Enter Your TOB"
+                            class="border rounded ps-2 w-[80%] mt-1">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="dnt">Date and Time :</label>
+                        <input type="datetime" name="dnt" id="dnt" placeholder="Enter Your Date and Time"
+                            class="border rounded ps-2 w-[80%] mt-1">
+                    </div>
+
+                </section>
+
+
+                <h4 class="text-2xl mt-10">Some More</h4>
+                <section class="grid grid-cols-3 gap-4 w-full mt-3">
+
+                    <!-- Text Field -->
+                    <div class="flex flex-col">
+                        <label for="bio">About Yourself:</label>
+                        <textarea name="bio" id="bio" placeholder="Enter something about yourself"
+                            class="border rounded ps-2 w-[80%] mt-1"></textarea>
+                    </div>
+
+                    <!-- Range -->
+                    <div class="flex flex-col">
+                        <label for="experience">Experience (Years):</label>
+                        <input type="range" name="experience" id="experience" min="0" max="10" value="5"
+                            class="w-[80%] mt-2">
+                    </div>
+
+                    <!-- Color -->
+                    <div class="flex flex-col">
+                        <label for="color">Choose Your Favorite Color:</label>
+                        <input type="color" name="color" id="color" class="w-[80%] mt-1">
+                    </div>
+
+                    <!-- File -->
+                    <div class="flex flex-col">
+                        <label for="resume">Upload Resume:</label>
+                        <input type="file" name="resume" id="resume" class="w-[80%] mt-1 border p-1 rounded-sm">
+                    </div>
+
+                </section>
+
+
+                <div class="mt-10 flex justify-between items-center">
+                    <input type="reset" value="reset"
+                        class="mx-auto border bg-black-200 py-1 px-3 rounded-xl shadow cursor-pointer">
+                    <input type="submit" value="Register"
+                        class="mx-auto border bg-black-200 py-1 px-3 rounded-xl shadow cursor-pointer">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white text-sm text-center py-4">
+        © All site contents copyright 1999-2026, CeX Ltd. All trademarks acknowledged. E&OE.
+    </footer>
+</body>
+
+</html>

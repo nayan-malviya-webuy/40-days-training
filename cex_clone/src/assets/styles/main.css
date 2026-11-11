@@ -1,0 +1,7 @@
+/* @import './variables.css';
+@import './base.css'; */
+@import "tailwindcss";
+/* @import './common.css';
+@import './layout.css';
+@import './header.css';
+@import './footer.css'; */
