@@ -1,0 +1,264 @@
+@import url('https://googleapis.com');
+
+
+:root {
+    --primary: #e20a03;
+    --secondary: #ffffff;
+    --tertiary: #000000;
+    --bg: #f9f9f9;
+    --border: #e6e6e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+}
+
+header {
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+}
+
+header > div > img{
+    width: 70px;
+}
+
+header > div > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondary);
+    font-size: 17px;
+    gap: 4px;
+}
+
+
+header > div > div > i{
+    font-size: 22px;
+}
+
+header > div > input[type="search"]{
+    width: 50vw;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding-left: 16px;
+    font-size: 20px;
+    outline: none;
+}
+
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.cx-sell-btn {
+    padding: 8px 14px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header > nav {
+    margin-top: 18px;
+    display: flex;
+    gap: 20px;
+}
+
+header > nav > a {
+    text-decoration: none;
+    color: var(--secondary);
+    padding-bottom: 4px;
+    border: 2px solid transparent;
+}
+
+header > nav > a:hover{
+    border-bottom: 2px solid yellow;
+}
+
+.link-active {
+    border-bottom: 2px solid rgb(59, 79, 59);
+}
+
+
+
+main{
+    min-height: 550px;
+}
+
+
+
+
+
+
+
+
+
+/* ############## home page specific stylling ############## */
+
+.cxbreadcrub {
+    margin: 16px 20px;
+    font-size: 16px;
+    
+}
+
+.cx-main-section{
+    margin: 30px 80px;
+}
+
+.main-section-heading {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.sub-section-cont{
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 14px 0;
+}
+
+.sub-section-heading{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+}
+
+.sub-section-heading > h3{
+    font-weight: 600;
+}
+
+.sub-section-heading > button {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    border: none;
+}
+
+.sub-section-main-cont{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 550px;
+    padding: 0 14px;
+}
+
+.sub-section-main-cont > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.cx-semi-bold {
+    font-weight: 600;
+}
+
+.cx-underline{
+    text-decoration: underline;
+}
+/* ################ home page styling end ################## */
+
+
+
+/* ############## register page (form specific stylling)  ########## */
+.cx-form{
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    padding: 10px;
+    border-radius: 14px;
+    margin: 14px auto;
+}
+
+.cx-form-heading {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.cx-form-section{
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+.cx-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+}
+
+.cx-form-field > label{
+    font-size: 16px;
+}
+
+.cx-form-field > select,
+.cx-form-field > textarea,
+.cx-form-field > input {
+    width: 90%;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    padding: 4px 12px;
+    margin-top: 4px;
+    font-size: 18px;
+    background-color: #efededc9;
+    height: 50px;
+}
+
+.cx-form-field > div{
+    display: flex;
+    gap: 10px;
+}
+
+.cx-form-field > div > div {
+    display: flex;
+    gap: 5px;
+}
+
+.cx-form-field  input[type="radio"]{
+    font-size: 20px;
+}
+
+/* ################################################################# */
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    padding: 20px;
+    text-align: center;
+}
