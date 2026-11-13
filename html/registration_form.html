@@ -40,12 +40,14 @@
 
         <nav>
             <a href="index.html">Home</a>
-            <a href="#" class="link-active">register</a>
+            <a href="registration_form.html" class="link-active">register</a>
         </nav>
     </header>
 
+   
 
-    <main>
+
+    <main style="margin-left: 60px;">
 
         <h3 class="cxbreadcrub">Home > <strong class="cx-semi-bold">register account</strong></h3>
 
@@ -119,7 +121,7 @@
                                 <label for="female">Female</label>
 
                             </div>
-                            
+
                             <div>
                                 <input type="radio" name="gender" id="other" value="other">
                                 <label for="other">Other</label>
@@ -223,46 +225,6 @@
     <footer>
         © All site contents copyright 1999-2026, CeX Ltd. All trademarks acknowledged. E&OE.
     </footer>
-
-
-
-    <script>
-        const countrySelect = document.getElementById("country");
-
-        async function loadCountries() {
-            try {
-                const response = await fetch(
-                    "https://cdn.jsdelivr.net/npm/countries-list@3.4.1/countries.min.json"
-                );
-
-                if (!response.ok) {
-                    throw new Error("Failed to fetch countries");
-                }
-
-                const data = await response.json();
-
-                const countries = Object.values(data);
-
-                countries.sort((a, b) =>
-                    a.name.localeCompare(b.name)
-                );
-
-                countries.forEach(country => {
-                    const option = document.createElement("option");
-
-                    option.value = country.name;
-                    option.textContent = country.name;
-
-                    countrySelect.appendChild(option);
-                });
-
-            } catch (error) {
-                console.error("Country loading error:", error);
-            }
-        }
-
-        loadCountries();
-    </script>
 </body>
 
 </html>

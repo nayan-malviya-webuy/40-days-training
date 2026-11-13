@@ -14,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
     font-weight: 400;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -29,7 +30,7 @@ header {
     padding: 20px;
 }
 
-header > div {
+header>div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -37,25 +38,37 @@ header > div {
     gap: 34px;
 }
 
-header > div > img{
+header>div>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-img {
     width: 70px;
 }
 
-header > div > div{
+header>div>div,
+.cx-header-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--secondary);
     font-size: 17px;
     gap: 4px;
+    cursor: pointer;
 }
 
 
-header > div > div > i{
+
+header>div>div>i,
+.cx-header-btn>i {
     font-size: 22px;
 }
 
-header > div > input[type="search"]{
+header>div>input[type="search"],
+#second-row-search-bar {
     width: 50vw;
     height: 40px;
     border: none;
@@ -82,20 +95,21 @@ input[type="search"]::-webkit-search-cancel-button {
     cursor: pointer;
 }
 
-header > nav {
+
+header>nav {
     margin-top: 18px;
     display: flex;
     gap: 20px;
 }
 
-header > nav > a {
+header>nav>a {
     text-decoration: none;
     color: var(--secondary);
     padding-bottom: 4px;
     border: 2px solid transparent;
 }
 
-header > nav > a:hover{
+header>nav>a:hover {
     border-bottom: 2px solid yellow;
 }
 
@@ -105,28 +119,306 @@ header > nav > a:hover{
 
 
 
-main{
+@media (max-width: 991px) {
+    #cx-middle-search-bar {
+        display: none;
+    }
+
+    header>div {
+        justify-content: space-between;
+    }
+
+    .cx-header-btn>span {
+        display: none;
+    }
+
+    header > div > span{
+        gap: 12px;
+    }
+}
+
+@media (min-width:992px) {
+    #second-row-search-bar {
+        display: none;
+    }
+}
+
+main {
     min-height: 550px;
 }
 
 
 
 
+/* #################### sidebar code #################### */
+.cx-left-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100vh;
+    max-width: 100vw;
+    background-color: var(--secondary);
+    z-index: 1000;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 36px;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cx-left-sidebar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.cx-left-sidebar.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body:has(.cx-left-sidebar.open)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.cx-left-sidebar>h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cx-left-sidebar>h2>i {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(20, 20, 20);
+    cursor: pointer;
+}
+
+.cx-leftsidebar-heading {
+    font-weight: 600;
+    color: rgb(39, 39, 39);
+}
+
+.cx-sidebar-catbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cx-sidebar-catbox>button,
+.cx-sidebar-catbox-btn {
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ###################################################### */
 
 
+/* ############## Sign in Modal Code ############## */
+.cx-auth-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cx-auth-modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cx-auth-modal {
+    background-color: var(--secondary);
+    width: 250px;
+    max-height: 90vh;
+    padding: 30px;
+    border-radius: 20px;
+
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.cx-auth-modal-overlay.open .cx-auth-modal {
+    transform: scale(1);
+}
+
+/* ################################################ */
 
 
 
 /* ############## home page specific stylling ############## */
+.cx-main-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 30px;
+}
 
+.cx-left-profile-nav-section{
+    width: 20vw;
+    min-height: 200px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+}
+
+.cx-left-profile-nav-section > h2{
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin: 16px;
+    font-size: 24px;
+}
+
+.cx-lp-ac-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin: 16px;
+    font-size: 16px;
+}
+
+.cx-lp-ac-box > strong{
+    font-weight: 600;
+}
+
+.cx-left-panel-blinks-cont{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.cx-left-panel-blinks-btns {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 18px 30px;
+    font-size: 16px;
+    background-color: transparent;
+    text-align: left;
+    font-weight: 900;
+    color: black;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cx-left-panel-blinks-btns > i {
+    color: white;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.cx-left-panel-blinks-btns:hover,
+.cx-left-panel-blinks-btns.active {
+    background-color: #e20a03;
+    color: white;
+}
+
+.cx-left-panel-box{
+    border-top: 1px solid rgba(128, 128, 128, 0.4);
+}
+
+.cx-left-panel-box-btn{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 18px 30px;
+    font-size: 14px;
+    background-color: transparent;
+    text-align: left;
+    font-weight: 600;
+    color: rgb(39, 38, 38);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cx-left-panel-box-btn:hover,
+.cx-left-panel-box-btn.active {
+    background-color: #e20a03;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################################################## */
 .cxbreadcrub {
     margin: 16px 20px;
     font-size: 16px;
-    
+
 }
 
-.cx-main-section{
-    margin: 30px 80px;
+.cx-main-section {
+    
+    width: 78vw;
 }
 
 .main-section-heading {
@@ -134,24 +426,24 @@ main{
     font-weight: 600;
 }
 
-.sub-section-cont{
+.sub-section-cont {
     border: 1px solid rgba(128, 128, 128, 0.4);
     border-radius: 10px;
     padding: 12px;
     margin: 14px 0;
 }
 
-.sub-section-heading{
+.sub-section-heading {
     display: flex;
     justify-content: space-between;
     padding: 10px 12px;
 }
 
-.sub-section-heading > h3{
+.sub-section-heading>h3 {
     font-weight: 600;
 }
 
-.sub-section-heading > button {
+.sub-section-heading>button {
     padding: 6px 10px;
     border-radius: 8px;
     background-color: var(--tertiary);
@@ -159,15 +451,15 @@ main{
     border: none;
 }
 
-.sub-section-main-cont{
+.sub-section-main-cont {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 550px;
+    gap: 30vw;
     padding: 0 14px;
 }
 
-.sub-section-main-cont > div{
+.sub-section-main-cont>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -178,15 +470,16 @@ main{
     font-weight: 600;
 }
 
-.cx-underline{
+.cx-underline {
     text-decoration: underline;
 }
+
 /* ################ home page styling end ################## */
 
 
 
 /* ############## register page (form specific stylling)  ########## */
-.cx-form{
+.cx-form {
     border: 1px solid rgba(128, 128, 128, 0.4);
     padding: 10px;
     border-radius: 14px;
@@ -199,7 +492,7 @@ main{
     font-weight: 500;
 }
 
-.cx-form-section{
+.cx-form-section {
     margin: 10px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -213,13 +506,13 @@ main{
     margin-top: 14px;
 }
 
-.cx-form-field > label{
+.cx-form-field>label {
     font-size: 16px;
 }
 
-.cx-form-field > select,
-.cx-form-field > textarea,
-.cx-form-field > input {
+.cx-form-field>select,
+.cx-form-field>textarea,
+.cx-form-field>input {
     width: 90%;
     outline: none;
     border-radius: 20px;
@@ -231,17 +524,17 @@ main{
     height: 50px;
 }
 
-.cx-form-field > div{
+.cx-form-field>div {
     display: flex;
     gap: 10px;
 }
 
-.cx-form-field > div > div {
+.cx-form-field>div>div {
     display: flex;
     gap: 5px;
 }
 
-.cx-form-field  input[type="radio"]{
+.cx-form-field input[type="radio"] {
     font-size: 20px;
 }
 
@@ -261,4 +554,4 @@ footer {
     color: var(--secondary);
     padding: 20px;
     text-align: center;
-} 
+}
