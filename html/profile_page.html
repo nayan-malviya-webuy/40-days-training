@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayan Malviya - CEX (Complete Entertainment Exchange)</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <span>
+                <div id="toggleSidebar" class="cx-header-btn">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                    <span>
+                        Menu
+                    </span>
+                </div>
+                <img class="logo-img" src="https://uk.webuy.com/img/logo.svg" alt="CEX" class="mx-3 h-12" />
+            </span>
+            <input id="cx-middle-search-bar" type="search" placeholder="What you want to buy?">
+
+            <span>
+                <div id="openModal" class="cx-header-btn">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Account</span>
+                </div>
+                <div class="cx-header-btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>
+                        Basket
+                    </span>
+                </div>
+
+
+                <button class="cx-sell-btn">
+                    Sell to CEX
+                </button>
+            </span>
+        </div>
+
+        <input id="second-row-search-bar" style="width: 85%; margin-top: 24px;" type="search"
+            placeholder="What you want to buy?">
+
+        <nav>
+            <a href="index.html" >Home</a>
+            <a href="#" class="link-active">Profile</a>
+            <a href="registration_form.html">register</a>
+        </nav>
+    </header>
+
+
+    <!-- ############ sidebar  ############# -->
+    <aside class="cx-left-sidebar" id="leftSidebar">
+        <h2>
+            <span class="cx-leftsidebar-heading">Menu</span>
+            <i class="fa-solid fa-x" id="closeSidebar"></i>
+        </h2>
+
+        <h2 class="cx-leftsidebar-heading" style="margin-top: 30px;margin-bottom: 20px;">
+            Buy
+        </h2>
+
+
+        <div class="cx-sidebar-catbox">
+            <button>Gamming <i class="fa-solid fa-chevron-right"></i></button>
+            <button>Phones <i class="fa-solid fa-chevron-right"></i></button>
+            <button>Computing <i class="fa-solid fa-chevron-right"></i></button>
+            <button>Electronics <i class="fa-solid fa-chevron-right"></i></button>
+            <button>Film & TV <i class="fa-solid fa-chevron-right"></i></button>
+            <button>New Accessories <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <hr>
+
+        <h2>
+            <span class="cx-leftsidebar-heading" style="margin-top: 20px;">Sell</span>
+        </h2>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Trade in Your
+            Item</button>
+
+        <hr>
+
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Find a
+            Store</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Support</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Careers</button>
+        <button class="cx-sidebar-catbox-btn"
+            style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Franchising</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Repairs</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">About
+            CEX</button>
+    </aside>
+    <!-- ################################## -->
+
+    <!-- ############ Signin Model  ############# -->
+    <div class="cx-auth-modal-overlay" id="cxauthmodal">
+        <div class="cx-auth-modal">
+            <button id="closeModal">✕</button>
+            <!-- model content -->
+            <h1>Hello Modal</h1>
+        </div>
+    </div>
+    <!-- ######################################## -->
+
+    <main>
+        <h3 class="cxbreadcrub">Home > <strong>My Account</strong></h3>
+
+        <div class="cx-main-container">
+            <aside class="cx-left-profile-nav-section">
+                <h2>Hi Nayan</h2>
+                <div class="cx-lp-ac-box">
+                    <strong>Account Number:</strong>
+                    <span>9029 0212 7737 7089 88</span>
+                </div>
+
+                <div class="cx-left-panel-blinks-cont">
+                    <button class="cx-left-panel-blinks-btns">
+                        <i class="fa-solid fa-cube"></i>
+                        Your Purchase
+                    </button>
+
+                    <button class="cx-left-panel-blinks-btns">
+                        <i class="fa-solid fa-tag"></i>
+                        Your Sales
+                    </button>
+
+                    <button class="cx-left-panel-blinks-btns">
+                        <i class="fa-regular fa-heart"></i>
+                        Favourits
+                    </button>
+
+                    <button class="cx-left-panel-blinks-btns">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Recently Viewed
+                    </button>
+                </div>
+
+                <div class="cx-left-panel-box">
+                    <button class="cx-left-panel-box-btn">
+                        Your Profile
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Your Address
+                    </button>
+                </div>
+
+
+                <div class="cx-left-panel-box">
+                    <button class="cx-left-panel-box-btn">
+                        Your Membership Card
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Membership Abilities
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Your Alerts
+                    </button>
+                </div>
+
+                <div class="cx-left-panel-box">
+                    <button class="cx-left-panel-box-btn">
+                        Message Center
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Your Saved Payment Cards
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Your Bank Details
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Your Paypal Account Details
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Cancel My Account
+                    </button>
+                    <button class="cx-left-panel-box-btn">
+                        Log Out
+                    </button>
+                </div>
+            </aside>
+
+
+            <section class="cx-main-section">
+                <h2 class="main-section-heading">Your Profile</h2>
+
+                <section class="sub-section-cont">
+                    <div class="sub-section-heading">
+                        <h3 class="font-bold text-xl">Personal Information</h3>
+                        <button class="font-bold text-white bg-black px-2 rounded-xl">
+                            Edit
+                        </button>
+                    </div>
+
+
+                    <div class="sub-section-main-cont">
+                        <div>
+                            <span class="cx-semi-bold">First Name</span>
+                            <span>Nayan</span>
+                        </div>
+                        <div class="flex flex-col gap-1 ">
+                            <span class="cx-semi-bold">Last Name</span>
+                            <span>Malviya</span>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section class="sub-section-cont">
+                    <div class="sub-section-heading">
+                        <h3 class="font-bold text-xl">Email Address</h3>
+                        <button class="font-bold text-white bg-black px-2 rounded-xl">
+                            Edit
+                        </button>
+                    </div>
+
+
+                    <div class="sub-section-main-cont">
+                        <div>
+                            <span class="cx-semi-bold">Email</span>
+                            <span>nayanmalviya75@gmail.com</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="sub-section-cont">
+                    <div class="sub-section-heading">
+                        <h3 class="font-bold text-xl">Contact Number</h3>
+                        <button class="font-bold text-white bg-black px-2 rounded-xl">
+                            Edit
+                        </button>
+                    </div>
+
+
+                </section>
+
+
+
+
+                <section class="sub-section-cont">
+                    <div class="sub-section-heading">
+                        <h3 class="font-bold text-xl">Password</h3>
+                    </div>
+
+
+                    <div class="sub-section-main-cont">
+                        <div>
+                            <span class="cx-semi-bold cx-underline">Reset password</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="cx-main-footer">
+
+        <!-- Top Footer -->
+        <div class="cx-footer-top">
+
+            <div class="cx-footer-links">
+                <h3>About</h3>
+                <a href="#">About Us</a>
+                <a href="#">Sell an item</a>
+                <a href="#">Careers</a>
+                <a href="#">Franchising</a>
+                <a href="#">CeX Blog</a>
+                <a href="#">Press</a>
+            </div>
+
+            <div class="cx-footer-links">
+                <h3>Support</h3>
+                <a href="#">Find a store</a>
+                <a href="#">Repairs</a>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQ</a>
+            </div>
+
+            <div class="cx-footer-links">
+                <h3>Legal</h3>
+                <a href="#">Terms and Conditions</a>
+                <a href="#">Cookies Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Manage Cookies</a>
+            </div>
+
+            <div class="cx-footer-socials">
+                <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+
+        </div>
+
+
+        <div class="cx-footer-bottom">
+
+            <p>
+                © All site contents copyright 1999-2026, CeX Ltd.
+                All trademarks acknowledged. E&OE.
+            </p>
+
+            <div class="cx-footer-apps">
+
+                <a href="#" class="cx-app-download">
+                    <i class="fa-brands fa-apple"></i>
+                    <span>
+                        <small>Download on the</small>
+                        App Store
+                    </span>
+                </a>
+
+                <a href="#" class="cx-app-download">
+                    <i class="fa-brands fa-google-play"></i>
+                    <span>
+                        <small>GET IT ON</small>
+                        Google Play
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        
+        <button class="cx-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
