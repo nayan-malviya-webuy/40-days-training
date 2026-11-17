@@ -1,7 +1,5 @@
-const bas_URL = 'https://dummyjson.com';
 
-
-function renderProduct(cid, thumburl, title, rating, category, price) {
+function renderProduct(cid, { thumburl, title, rating, category, price }) {
 
     try {
         const container = document.getElementById(cid);
@@ -14,7 +12,7 @@ function renderProduct(cid, thumburl, title, rating, category, price) {
             <div class="cx-product-card">
 
                 <div class="pcard-img-box">
-                <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
+                <img src="public/images/5_year_badge.png" alt="5 Year Warranty" class="product-card-badge">
                     <img 
                         class="product-img"
                         src="${thumburl}"
@@ -65,28 +63,52 @@ function renderProduct(cid, thumburl, title, rating, category, price) {
     }
 }
 
-async function loadRecommendedProducts() {
+
+function renderCat(cid, { name, image }) {
+
     try {
-        const rProducts = await fetchData(
-            bas_URL + '/products?limit=7&skip=0'
-        );
+        const container = document.getElementById(cid);
 
-        if (!rProducts || !rProducts.products) return;
+        if (!container) {
+            throw new Error(`Container "${cid}" not found!`);
+        }
 
-        console.log(rProducts)
+        const productHTML = `
+            <div class="cx-cat-card">
+                    <img src="${image}" alt="Cat Image">
+                    <span>
+                        ${name}
+                    </span>
+                </div>
+        `;
+
+        container.insertAdjacentHTML("beforeend", productHTML);
 
     } catch (error) {
-        console.error("Recommended Products Error:", error);
+        console.error("Product Rendering Error:", error);
+        alert(error.message);
     }
 }
 
-loadRecommendedProducts();
 
-// renderProduct(
-//     "cx-recommended-boxid",
-//     "https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg",
-//     "Xbox Series S Console, 512GB, White, Unboxed",
-//     4.8,
-//     "Xbox Series Consoles",
-//     320.00
-// );
+
+async function fetchAndRender(contId, url) {
+    fetchProducts(url)
+        .then(result => {
+
+            const formattedProducts = result.products.map(product => ({
+                thumburl: product.thumbnail,
+                title: product.title,
+                rating: product.rating,
+                category: product.category,
+                price: product.price
+            }));
+
+            formattedProducts.forEach(element => {
+                renderProduct(contId, element);
+            });
+
+        })
+        .catch(error => console.error(error));
+
+}

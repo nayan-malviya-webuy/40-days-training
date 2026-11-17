@@ -5,113 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nayan Malviya - CEX (Complete Entertainment Exchange)</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="public/styles/style.css">
 
     <!-- Font Awesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-    <link rel="stylesheet" href="home_page.css">
+    <link rel="stylesheet" href="public/styles/home_page.css">
 </head>
 
 <body>
 
-    <header>
-        <div>
-            <span>
-                <div id="toggleSidebar" class="cx-header-btn">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                    <span>
-                        Menu
-                    </span>
-                </div>
-                <img class="logo-img" src="https://uk.webuy.com/img/logo.svg" alt="CEX" class="mx-3 h-12" />
-            </span>
-            <input id="cx-middle-search-bar" type="search" placeholder="What you want to buy?">
+    <header id="header-container"></header>
 
-            <span>
-                <div id="openModal" class="cx-header-btn">
-                    <i class="fa-regular fa-user"></i>
-                    <span>Account</span>
-                </div>
-                <div class="cx-header-btn">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span>
-                        Basket
-                    </span>
-                </div>
-
-
-                <button class="cx-sell-btn">
-                    Sell to CEX
-                </button>
-            </span>
-        </div>
-
-        <input id="second-row-search-bar" style="width: 85%; margin-top: 24px;" type="search"
-            placeholder="What you want to buy?">
-
-        <nav>
-            <a href="#" class="link-active">Home</a>
-            <a href="profile_page.html">Profile</a>
-            <a href="registration_form.html">register</a>
-        </nav>
-    </header>
-
-
-    <!-- ############ sidebar  ############# -->
-    <aside class="cx-left-sidebar" id="leftSidebar">
-        <h2>
-            <span class="cx-leftsidebar-heading">Menu</span>
-            <i class="fa-solid fa-x" id="closeSidebar"></i>
-        </h2>
-
-        <h2 class="cx-leftsidebar-heading" style="margin-top: 30px;margin-bottom: 20px;">
-            Buy
-        </h2>
-
-
-        <div class="cx-sidebar-catbox">
-            <button>Gamming <i class="fa-solid fa-chevron-right"></i></button>
-            <button>Phones <i class="fa-solid fa-chevron-right"></i></button>
-            <button>Computing <i class="fa-solid fa-chevron-right"></i></button>
-            <button>Electronics <i class="fa-solid fa-chevron-right"></i></button>
-            <button>Film & TV <i class="fa-solid fa-chevron-right"></i></button>
-            <button>New Accessories <i class="fa-solid fa-chevron-right"></i></button>
-        </div>
-
-        <hr>
-
-        <h2>
-            <span class="cx-leftsidebar-heading" style="margin-top: 20px;">Sell</span>
-        </h2>
-        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Trade in Your
-            Item</button>
-
-        <hr>
-
-        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Find a
-            Store</button>
-        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Support</button>
-        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Careers</button>
-        <button class="cx-sidebar-catbox-btn"
-            style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Franchising</button>
-        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Repairs</button>
-        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">About
-            CEX</button>
-    </aside>
-    <!-- ################################## -->
-
-    <!-- ############ Signin Model  ############# -->
-    <div class="cx-auth-modal-overlay" id="cxauthmodal">
-        <div class="cx-auth-modal">
-            <button id="closeModal">✕</button>
-            <!-- model content -->
-            <h1>Hello Modal</h1>
-        </div>
-    </div>
-    <!-- ######################################## -->
-
-
-    <!-- https://uk.webuy.com/patterns/base-pattern.svg -->
     <!-- this is the main section -->
     <main class="cx-home-main-container">
 
@@ -139,188 +43,8 @@
         <section class="cx-home-section">
             <h2 class="cx-section-heading">Recommended for you</h2>
 
-            <div class="section-products-box swiper-wrapper" id="cx-recommended-boxid">
-                <div class="cx-product-card">
+            <div class="section-products-box slide-product-cont" id="cx-recommended-boxid">
 
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
             </div>
 
         </section>
@@ -330,160 +54,28 @@
         <section class="cx-home-section">
             <h2 class="cx-section-heading">Recently Viewed</h2>
 
-            <div class="section-products-box swiper-wrapper">
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
+            <div class="section-products-box slide-product-cont" id="hot-product-boxid">
 
             </div>
 
         </section>
 
 
-        <!-- phones section -->
+        <!-- discover section -->
         <section class="cx-home-section cx-cat-section">
             <h2 class="cx-section-heading cat-section-heading" style="margin-bottom: 10px;">Discover More</h2>
 
-            <div class="cx-categories-box">
+            <div class="cx-categories-box slide-product-cont" id="cx-discover-cat-box">
+
                 <div class="cx-cat-card">
-                    <img src="https://uk.static.webuy.com/images/supercat/1/product-lines/retro-gaming.jpg"
-                        alt="Cat Image">
+                    <img src="public/images/dummy_cat.png" alt="Cat Image">
+                    <span>
+                        Smart Watch
+                    </span>
+                </div>
+
+                <div class="cx-cat-card">
+                    <img src="public/images/dummy_cat.png" alt="Cat Image">
                     <span>
                         Smart Watch
                     </span>
@@ -491,47 +83,38 @@
 
 
                 <div class="cx-cat-card">
-                    <img src="https://uk.static.webuy.com/images/supercat/1/product-lines/retro-gaming.jpg"
-                        alt="Cat Image">
+                    <img src="public/images/dummy_cat.png" alt="Cat Image">
                     <span>
                         Smart Watch
                     </span>
                 </div>
+
 
 
                 <div class="cx-cat-card">
-                    <img src="https://uk.static.webuy.com/images/supercat/1/product-lines/retro-gaming.jpg"
-                        alt="Cat Image">
+                    <img src="public/images/dummy_cat.png" alt="Cat Image">
                     <span>
                         Smart Watch
                     </span>
                 </div>
+
 
 
                 <div class="cx-cat-card">
-                    <img src="https://uk.static.webuy.com/images/supercat/1/product-lines/retro-gaming.jpg"
-                        alt="Cat Image">
+                    <img src="public/images/dummy_cat.png" alt="Cat Image">
                     <span>
                         Smart Watch
                     </span>
                 </div>
 
-                <div class="cx-cat-card">
-                    <img src="https://uk.static.webuy.com/images/supercat/1/product-lines/retro-gaming.jpg"
-                        alt="Cat Image">
-                    <span>
-                        Smart Watch
-                    </span>
-                </div>
 
 
                 <div class="cx-cat-card">
-                    <img src="https://uk.static.webuy.com/images/supercat/1/product-lines/retro-gaming.jpg"
-                        alt="Cat Image">
+                    <img src="public/images/dummy_cat.png" alt="Cat Image">
                     <span>
                         Smart Watch
                     </span>
-                </div>
+                </div>  
             </div>
 
         </section>
@@ -542,147 +125,7 @@
         <section class="cx-home-section">
             <h2 class="cx-section-heading">Gaming</h2>
 
-            <div class="section-products-box swiper-wrapper">
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
+            <div class="section-products-box slide-product-cont" id="cx-gamming-boxid">
             </div>
 
         </section>
@@ -690,299 +133,28 @@
 
         <!-- Electronics section -->
         <section class="cx-home-section">
-            <h2 class="cx-section-heading">Recommended for you</h2>
+            <h2 class="cx-section-heading">Electronics</h2>
 
-            <div class="section-products-box swiper-wrapper">
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
+            <div class="section-products-box slide-product-cont" id="cx-electronics-boxid">
             </div>
 
         </section>
 
 
-        <!-- film and tv section -->
+        <!-- Phones Section -->
         <section class="cx-home-section">
-            <h2 class="cx-section-heading">Recommended for you</h2>
+            <h2 class="cx-section-heading">Phones</h2>
 
-            <div class="section-products-box swiper-wrapper">
+            <div class="section-products-box slide-product-cont" id="cx-phones-boxid">
+            </div>
 
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
+        </section>
 
 
+        <section class="cx-home-section">
+            <h2 class="cx-section-heading">Computing</h2>
 
-                <div class="cx-product-card">
-
-                    <div class="pcard-img-box">
-
-                        <img src="public/images/image.png" alt="5 Year Warranty" class="product-card-badge">
-
-                        <img class="product-img"
-                            src="https://uk.static.webuy.com/product_images/Gaming/Xbox%20Series%20Consoles/SXSS512GBW002_l.jpg"
-                            alt="Xbox Series S Console">
-
-                        <i class="fa-regular fa-heart product-card-wish-btn"></i>
-
-                    </div>
-
-                    <div class="product-card-info">
-
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-
-                        <p class="product-card-category">
-                            Xbox Series Consoles
-                        </p>
-
-                        <h3 class="product-card-title">
-                            Xbox Series S Console, 512GB, White, Unboxed
-                        </h3>
-
-                        <div class="product-card-footer">
-
-                            <h2 class="product-card-price">
-                                £320.00
-                            </h2>
-
-                            <button class="product-card-cart-btn">
-                                <i class="fa-solid fa-basket-shopping"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
+            <div class="section-products-box slide-product-cont" id="cx-computing-boxid">
             </div>
 
         </section>
@@ -1006,7 +178,7 @@
         <section class="cx-home-section">
             <h2 class="cx-section-heading">CeX Blog</h2>
 
-            <div class="section-products-box swiper-wrapper">
+            <div class="section-products-box slide-product-cont">
                 <div class="cx-blog-card">
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlxFMWIG6OHWFWkIkIF5Zq3KB0rAa4NiWX8t3KxXItXTA3N8D7Z7CSk6SDbcHqu6-fOcl8taBU4a4ONL1O34EL2rkW_iWe0_PycQS2bsBVNyR1v1uCDWcIeBGkc37y-BVJ_9qiqt1PPAyUBjVqhtsgLakwMAE0KglA8CwBEnNdODgwCZbDL8pdBXbTwbES/s1920/UK%20CeX%20Extended%20Xmas%20Returns%20digital%20assets%20blog%20header%20OCT26%20GS-04.png"
                         alt="Blog Image">
@@ -1045,94 +217,42 @@
     </main>
 
 
+    <footer class="cx-main-footer" id="footer-container"></footer>
+
+
+    <script src="public/js/service.js"></script>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/home.js"></script>
+    <script>
+
+        Promise.all([
+            loadComponent("header-container", "components/header.html"),
+            loadComponent("footer-container", "components/footer.html")
+        ]).then(initHeader);
 
 
 
-
-    <footer class="cx-main-footer">
-
-        <!-- Top Footer -->
-        <div class="cx-footer-top">
-
-            <div class="cx-footer-links">
-                <h3>About</h3>
-                <a href="#">About Us</a>
-                <a href="#">Sell an item</a>
-                <a href="#">Careers</a>
-                <a href="#">Franchising</a>
-                <a href="#">CeX Blog</a>
-                <a href="#">Press</a>
-            </div>
-
-            <div class="cx-footer-links">
-                <h3>Support</h3>
-                <a href="#">Find a store</a>
-                <a href="#">Repairs</a>
-                <a href="#">Contact Us</a>
-                <a href="#">FAQ</a>
-            </div>
-
-            <div class="cx-footer-links">
-                <h3>Legal</h3>
-                <a href="#">Terms and Conditions</a>
-                <a href="#">Cookies Policy</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Manage Cookies</a>
-            </div>
-
-            <div class="cx-footer-socials">
-                <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-
-        </div>
+        // load recommended products from backend
+        fetchAndRender('cx-recommended-boxid', 'products?limit=7&skip=0');
 
 
-        <div class="cx-footer-bottom">
-
-            <p>
-                © All site contents copyright 1999-2026, CeX Ltd.
-                All trademarks acknowledged. E&OE.
-            </p>
-
-            <div class="cx-footer-apps">
-
-                <a href="#" class="cx-app-download">
-                    <i class="fa-brands fa-apple"></i>
-                    <span>
-                        <small>Download on the</small>
-                        App Store
-                    </span>
-                </a>
-
-                <a href="#" class="cx-app-download">
-                    <i class="fa-brands fa-google-play"></i>
-                    <span>
-                        <small>GET IT ON</small>
-                        Google Play
-                    </span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        
-        <button class="cx-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-            <i class="fa-solid fa-chevron-up"></i>
-        </button>
-
-    </footer>
+        // Recently Viewed
+        fetchAndRender('hot-product-boxid', 'products?limit=4&skip=10');
 
 
 
-    <script src="script.js"></script>
+        // load gammind section products
+        fetchAndRender('cx-gamming-boxid', 'products/search?q=headphones');
 
-    <script src="homescript.js">
+        // load electronics Items
+        fetchAndRender('cx-electronics-boxid', 'products/category/mobile-accessories')
 
+
+        // load phones section
+        fetchAndRender('cx-phones-boxid', 'products/category/laptops')
+
+        // load computing section products
+        fetchAndRender('cx-computing-boxid', 'products/category/laptops')
     </script>
 </body>
 
