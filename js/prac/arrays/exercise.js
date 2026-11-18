@@ -1,4 +1,4 @@
-import { onlyTitleList, expensiveProducts, totalPrice, FindProduct, productsWithDicscount, arrangeProductsListCategoryWise, categoryWithCount, findIndexOfProduct, hasAtleastProductsInAnyStock } from "./solutions.js";
+import { onlyTitleList, expensiveProducts, totalPrice, FindProduct, productsWithDicscount, arrangeProductsListCategoryWise, categoryWithCount, findIndexOfProduct, hasAtleastProductsInAnyStock, getPaginatedProducts, getProductRatingAnalysis } from "./solutions.js";
 
 
 
@@ -38,7 +38,7 @@ fetchData().then((products) => {
 
 
     // Task 2 - Return all products whose price is greater than $100 using filter().
-    const expansiveProduct = expensiveProducts(products)
+    const expansiveProduct = expensiveProducts(100, products)
     // console.log(expansiveProduct)
 
 
@@ -82,43 +82,43 @@ fetchData().then((products) => {
     // console.log(findIndexOfProduct(4 , products))
 
     // task 11 - Check whether at least one product has stock greater than 100.
-    console.log(hasAtleastProductsInAnyStock(4, products))
+    // console.log(hasAtleastProductsInAnyStock(4, products))
 
 
 
     // Task 12 - Check whether every product has a rating >= 3
-    console.log(checkEveryProductRating(products));
+    // console.log(checkEveryProductRating(products));
 
 
     // Task 13 - Return products from page 2 (10 products per page)
-    console.log(getProductsPage2(products));
+    // console.log(getPaginatedProducts(5, 2, products));
 
 
     // Task 14 - Print information of every product
-    printProductInformation(products);
+    // printProductInformation(products);
 
 
 
     // Task 15 - Product Search Engine
-    console.log(searchProducts(products, "beauty"));
+    // console.log(searchProducts(products, "beauty"));
 
 
     // Task 16 - Top 5 Most Expensive Products
-    console.log(getTopFiveExpensiveProducts(products));
+    // console.log(getTopFiveExpensiveProducts(products));
 
 
     // Task 17 - Category Revenue Report
-    console.log(getCategoryRevenueReport(products));
+    // console.log(getCategoryRevenueReport(products));
 
 
     // Task 18 - Second Most Expensive Product
-    console.log(getSecondMostExpensiveProduct(products));
+    // console.log(getSecondMostExpensiveProduct(products));
 
 
     // Task 19 - Remove Out-of-Stock Products
     // Create a new array containing only available products.
     // Then remove the first two products from that new array.
-    console.log(removeOutOfStockProducts(products));
+    // console.log(removeOutOfStockProducts(products));
 
 
     // Task 20 - Create a report containing:
@@ -127,13 +127,13 @@ fetchData().then((products) => {
     // - Discounted price.
     // - Discount amount.
     // - Final price rounded to two decimal places
-    console.log(getProductDiscountReport(products));
+    // console.log(getProductDiscountReport(products));
 
 
     // Task 21 - Most Popular Category
     // Find which category has the highest number of products.
     // Return the category name and its product count.
-    console.log(getMostPopularCategory(products));
+    // console.log(getMostPopularCategory(products));
 
 
     // Task 22 - Product Rating Analysis
@@ -150,11 +150,11 @@ fetchData().then((products) => {
     // - Remove duplicate brands.
     // - Ignore missing or empty brand values.
     // - Return an array of unique brand names.
-    console.log(getUniqueBrands(products));
+    // console.log(getUniqueBrands(products));
 
 
     // Task 24 - Build a function called generateProductDashboard() that returns:
-    console.log(generateProductDashboard(products));
+    // console.log(generateProductDashboard(products));
 })
 
 

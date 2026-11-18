@@ -6,8 +6,8 @@ export function onlyTitleList(products){
 }
 
 
-export function expensiveProducts(products){
-    return products.filter(product => product.price > 100).map(product => {
+export function expensiveProducts(minPrice, products){
+    return products.filter(product => product.price > minPrice).map(product => {
         return {
             name : product.title,
             price : product.price
@@ -95,9 +95,7 @@ export function checkEveryProductRating(products) {
 }
 
 
-export function getProductsPage2(products) {
-    const page = 2;
-    const limit = 10;
+export function getPaginatedProducts(limit, page, products) {
 
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
@@ -189,6 +187,7 @@ export function getMostPopularCategory(products) {
     , ["", 0]);
 }
 
+const filterProductsByMinRating = (products, minRating = 4.5) => products.filter(product => product.rating > minRating);
 
 export function getProductRatingAnalysis(products) {
     if (products.length === 0) {
@@ -213,13 +212,12 @@ export function getProductRatingAnalysis(products) {
 
     const sortedProducts = [...products].sort((a, b) => b.rating - a.rating);
 
-    const productsAbove45 = products.filter(product => product.rating > 4.5);
 
     return {
         highestRatedProduct: sortedProducts[0],
         lowestRatedProduct: sortedProducts[sortedProducts.length - 1],
         averageRating: Number((ratings.total / products.length).toFixed(2)),
-        productsAbove45: productsAbove45.length
+        productsAbove45: filterProductsByMinRating(products)
     };
 }
 
