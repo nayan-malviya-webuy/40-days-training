@@ -121,6 +121,10 @@
     transition: transform 180ms ease-in, box-shadow 180ms ease-in;
 }
 
+.cx-product-card:hover{
+    cursor: pointer;
+}
+
 /* Product Image */
 
 .pcard-img-box {
@@ -341,5 +345,89 @@
 
     .cx-blog-card-heading {
         font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+/* for search page only */
+
+/* Search Products Grid */
+
+#cx-search-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    padding: 20px;
+    margin: 20px 85px;
+    align-items: stretch;
+}
+
+/* Product cards inside search grid */
+
+#cx-search-cards-container .cx-product-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/* Large Tablet */
+@media (max-width: 1200px) {
+    #cx-search-cards-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 20px 40px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #cx-search-cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin: 15px 20px;
+        padding: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #cx-search-cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    #cx-search-cards-container .pcard-img-box {
+        height: 160px;
+        padding: 12px;
+    }
+
+    #cx-search-cards-container .product-card-info {
+        padding: 10px;
+    }
+
+    #cx-search-cards-container .product-card-title {
+        font-size: 14px;
+    }
+
+    #cx-search-cards-container .product-card-price {
+        font-size: 18px;
+    }
+
+    #cx-search-cards-container .product-card-cart-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    #cx-search-cards-container .product-card-footer {
+        margin-top: 20px;
     }
 }
