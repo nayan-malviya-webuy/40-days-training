@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo Using vanilla - JS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <main class="main-container">
+        <form action="" class="add-todo-form">
+            <input type="search" placeholder="What you wanna remember ?" class="input-search">
+            <input type="submit" value="Add Todo" class="cx-btn ">
+        </form>
+
+        <ul class="my-todo-section" id="todo-container-id">
+            <li class="todo-item">
+                <div class="todo-contant">
+                    <h2 class="todo-heading">Have Food</h2>
+                    <span class="todo-date">Suterday, 27 Aug 26, 13:56</span>
+                </div>
+
+                <div class="todo-buttons">
+                    <!-- <button>Delete</button> -->
+                     <i class="fa-solid fa-xmark"></i>
+                     <i class="fa-solid fa-check"></i>
+                    <!-- <button>Completed</button> -->
+                </div>
+            </li>
+        </ul>
+
+        <!-- <h2 style="margin-top: 20px;">Completed</h2> -->
+        <ul class="my-todo-section" id="todoc-container-id" style="margin-top: 0px;">
+            <li class="todo-item">
+                <div class="todo-contant">
+                    <h2 class="todo-heading" style="text-decoration: line-through;">Have Food</h2>
+                    <span class="todo-date">Suterday, 27 Aug 26, 13:56</span>
+                </div>
+
+                <div class="todo-buttons">
+                    <!-- <button>Delete</button> -->
+                     <i class="fa-solid fa-xmark"></i>
+                     <i class="fa-solid fa-chevron-up"></i>
+                    <!-- <button>Completed</button> -->
+                </div>
+            </li>
+        </ul>
+    </main>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
