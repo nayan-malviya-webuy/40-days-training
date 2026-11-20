@@ -1,0 +1,228 @@
+@import url('https://googleapis.com');
+
+
+:root {
+    --primary: #000000;
+    --secondary: #e20a03;
+    --text-secondary: #f4eeee;
+    --bg: #f9f9f9;
+    --bg-secondary: #eaeaeaa2;
+    --border: #efe8e8c2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--bg);
+}
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: ; */
+    align-items: center;
+    padding-top: 50px;
+    overflow-y: auto;
+}
+
+.add-todo-form{
+    display: flex;
+    gap: 10px;
+}
+
+.input-search{
+    width: 800px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    padding-left: 16px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid var(--border);
+}
+
+.cx-btn{
+    padding: 0 10px;
+    border-radius: 16px;
+    outline: none;
+    border: 1px solid var(--border);
+    background-color: var(--secondary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: large;
+}
+
+.my-todo-section{
+    margin-top: 40px;
+    width: 60%;
+}
+
+.todo-item{
+    margin: 20px;
+    padding: 20px;
+    list-style: none;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px var(--bg-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-heading{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.todo-date{
+    font-weight: 200;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.todo-buttons{
+    display: flex;
+    font-size: 18px;
+    gap: 20px;
+}
+
+.todo-buttons > i{
+    cursor: pointer;
+}
+
+.todo-buttons > i:last-child{
+    color: var(--secondary);
+    /* background-color: #e20a03; */
+}
+
+
+
+
+/* Large screens */
+@media (max-width: 1200px) {
+    .input-search {
+        width: 650px;
+    }
+
+    .my-todo-section {
+        width: 75%;
+    }
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+    .main-container {
+        padding: 40px 20px;
+    }
+
+    .add-todo-form {
+        width: 85%;
+    }
+
+    .input-search {
+        width: 100%;
+        min-width: 0;
+        height: 55px;
+        font-size: 17px;
+    }
+
+    .cx-btn {
+        font-size: 16px;
+    }
+
+    .my-todo-section {
+        width: 90%;
+    }
+
+    .todo-heading {
+        font-size: 24px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .main-container {
+        padding: 30px 12px;
+    }
+
+    .add-todo-form {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .input-search {
+        height: 48px;
+        font-size: 15px;
+        border-radius: 12px;
+        padding-left: 12px;
+    }
+
+    .cx-btn {
+        padding: 0 12px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .my-todo-section {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .todo-item {
+        margin: 12px 0;
+        padding: 14px;
+        gap: 10px;
+        border-radius: 10px;
+    }
+
+    .todo-heading {
+        font-size: 19px;
+        overflow-wrap: anywhere;
+    }
+
+    .todo-date {
+        font-size: 11px;
+    }
+
+    .todo-buttons {
+        gap: 14px;
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+    .todo-item {
+        padding: 10px;
+    }
+
+    .todo-heading {
+        font-size: 16px;
+    }
+
+    .todo-buttons {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .cx-btn {
+        padding: 0 9px;
+    }
+}
+
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
