@@ -96,6 +96,10 @@ async function fetchAndRender(contId, url) {
     fetchProducts(url)
         .then(result => {
 
+            if(!result.products || result.products.length === 0){
+                document.querySelector('#' + contId).innerHTML = '<sapn> products not found </sapn>'
+            }
+
             const formattedProducts = result.products.map(product => ({
                 thumburl: product.thumbnail,
                 title: product.title,

@@ -38,7 +38,6 @@
             </div>
         </section>
 
-
         <!-- recommended for you sectoin -->
         <section class="cx-home-section">
             <h2 class="cx-section-heading">Recommended for you</h2>
@@ -223,12 +222,16 @@
     <script src="public/js/service.js"></script>
     <script src="public/js/main.js"></script>
     <script src="public/js/home.js"></script>
+    <script src="public/js/search.js"></script>
     <script>
 
         Promise.all([
             loadComponent("header-container", "components/header.html"),
             loadComponent("footer-container", "components/footer.html")
-        ]).then(initHeader);
+        ]).then(() => {
+            initHeader()
+            initSearch()
+        });
 
 
 

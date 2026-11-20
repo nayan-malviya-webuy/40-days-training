@@ -29,6 +29,29 @@ function initHeader() {
     const openBtn = document.querySelector("#toggleSidebar");
     const closeBtn = document.querySelector("#closeSidebar");
     const leftCatBox = document.querySelector("#cx-leftsidebar-catbox")
+    const cxSearchBar = document.querySelector("#cx-middle-search-bar");
+    // // const inputSearch = document.querySelector("#cx-middle-search-bar");
+    // const firstContainer = document.querySelector(".search-cont-one");
+    // const secondContainer = document.querySelector("#search-cont-two");
+
+    // const searchInput = document.createElement("input");
+
+    // searchInput.id = "cx-middle-search-bar";
+    // searchInput.type = "search";
+    // searchInput.placeholder = "What you want to buy?";
+
+    // function moveSearchBar() {
+    //     const container = window.innerWidth < 992
+    //         ? secondContainer
+    //         : firstContainer;
+
+    //     container.appendChild(searchInput);
+    // }
+
+    // window.addEventListener("resize", moveSearchBar);
+    // moveSearchBar();
+
+
 
     openBtn.addEventListener("click", () => {
         sidebar.classList.toggle("open");
