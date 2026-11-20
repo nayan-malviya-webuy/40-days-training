@@ -1,19 +1,30 @@
-
-export function createTodoManager(onChange) {
+export function createTodoManager() {
 
     let todoList = JSON.parse(localStorage.getItem("todolist")) || [];
     let completedTodos = JSON.parse(localStorage.getItem("completedtodos")) || [];
 
+    
+    const listeners = new Set();
 
 
+    function subscribe(callback) {
+        listeners.add(callback);
+
+        return () => listeners.delete(callback);
+    }
+
+    function notifyChange() {
+        listeners.forEach(callback => callback({
+            todos: getTodos(),
+            completedTodos: getCompletedTodos(),
+            stats: getStats()
+        }));
+    }
 
     function saveTodos() {
         localStorage.setItem("todolist", JSON.stringify(todoList));
         localStorage.setItem("completedtodos", JSON.stringify(completedTodos));
     }
-
-
-
 
     function addTodo(name) {
         const newTodo = {
@@ -23,37 +34,30 @@ export function createTodoManager(onChange) {
 
         todoList.unshift(newTodo);
         saveTodos();
-
-        onChange()
+        notifyChange();
 
         return newTodo;
     }
 
-
-
     function removeTodo(id) {
-        const todoExists = [...todoList, ...completedTodos]
+        const exists = [...todoList, ...completedTodos]
             .some(todo => todo.id === id);
 
-        if (!todoExists) return false;
+        if (!exists) return false;
 
         todoList = todoList.filter(todo => todo.id !== id);
         completedTodos = completedTodos.filter(todo => todo.id !== id);
 
         saveTodos();
-        onChange()
+        notifyChange();
+
         return true;
     }
-
-
-
 
     function getTodoById(id) {
         return [...todoList, ...completedTodos]
             .find(todo => todo.id === id) || null;
     }
-
-
 
     function markCompleted(id) {
         const index = todoList.findIndex(todo => todo.id === id);
@@ -64,11 +68,10 @@ export function createTodoManager(onChange) {
         completedTodos.unshift(todo);
 
         saveTodos();
-        onChange()
+        notifyChange();
+
         return true;
     }
-
-
 
     function markUncompleted(id) {
         const index = completedTodos.findIndex(todo => todo.id === id);
@@ -79,23 +82,18 @@ export function createTodoManager(onChange) {
         todoList.unshift(todo);
 
         saveTodos();
-        onChange()
+        notifyChange();
+
         return true;
     }
-
-
 
     function getTodos() {
         return [...todoList];
     }
 
-
-
     function getCompletedTodos() {
         return [...completedTodos];
     }
-
-
 
     function getStats() {
         return {
@@ -105,9 +103,8 @@ export function createTodoManager(onChange) {
         };
     }
 
-
-    
     return {
+        subscribe,
         addTodo,
         removeTodo,
         getTodoById,

@@ -19,11 +19,9 @@ export function getTodoItemHTML(todo) {
                     <span class="todo-date">${formatLocalDateTime(todo.id)}</span>
                 </div>
 
-                <div class="todo-buttons"
-                    <!-- <button>Delete</button> -->
-                     <i class="fa-solid fa-xmark todoiconx" id="x-${todo.id}"></i>
-                     <i class="fa-solid fa-check todoiconcheck" id="c-${todo.id}"></i>
-                    <!-- <button>Completed</button> -->
+                <div class="todo-buttons">
+                     <i class="fa-solid fa-xmark todoiconclass" id="x-${todo.id}"></i>
+                     <i class="fa-solid fa-check todoiconclass" id="c-${todo.id}"></i>
                 </div>
             </li>
     `
@@ -39,10 +37,9 @@ export function getTodoCHTML(todo) {
                 </div>
 
                 <div class="todo-buttons">
-                    <!-- <button>Delete</button> -->
-                     <i class="fa-solid fa-xmark todoiconx" id="x-${todo.id}"></i>
-                     <i class="fa-solid fa-chevron-up todoiconmove" id="m-${todo.id}"></i>
-                    <!-- <button>Completed</button> -->
+                     <i class="fa-solid fa-xmark todoiconclass" id="x-${todo.id}"></i>
+                     <i class="fa-solid fa-chevron-up todoiconclass" id="m-${todo.id}"></i>
                 </div>
             </li>`
 }
+

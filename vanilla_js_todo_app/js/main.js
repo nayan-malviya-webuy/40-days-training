@@ -1,45 +1,96 @@
-import { createTodoManager } from "./todoManager.js";
+
 import { getTodoCHTML, getTodoItemHTML } from "./utils.js";
-
-
-const todoCont = document.querySelector("#todo-container-id")
-const todoContC = document.querySelector("#todoc-container-id")
+import { createTodoManager } from "./todoManager.js";
 
 
 
 
+const todoCont = document.querySelector("#todo-container-id");
+const todoContC = document.querySelector("#todoc-container-id");
+const todoForm = document.querySelector("#todoform")
+const searchBar = document.querySelector("#searchbar")
 
-const todoManager = createTodoManager(() => {
-    const todos = todoManager.getTodos()
-    const cTodos = todoManager.getCompletedTodos()
+
+const todoManager = createTodoManager();
 
 
-    // todo container inner html
+
+function renderTodos(data) {
+
+    const todos = data.todos;
+    const completedTodos = data.completedTodos;
+
+
+
     if (!todos || todos.length === 0) {
-        todoCont.innerHTML = '<span>Error</span>'
+
+        todoCont.innerHTML = '<span>No pending todos</span>';
+
     } else {
-        let todoHTML = ''
+
+        let todoHTML = '';
+
         todos.forEach(todo => {
-            todoHTML += getTodoItemHTML(todo)
-        })
+            todoHTML += getTodoItemHTML(todo);
+        });
 
-        todoCont.innerHTML = todoHTML
+        todoCont.innerHTML = todoHTML;
     }
 
 
-    if (!cTodos || cTodos.length === 0) {
-        todoContC.innerHTML = '<span>Error</span>'
+    if (!completedTodos || completedTodos.length === 0) {
+
+        todoContC.innerHTML = '<span>No completed todos</span>';
+
     } else {
-        let todoCHTML = ''
-        cTodos.forEach(todo => {
-            todoCHTML += getTodoCHTML(todo)
-        })
 
-        todoContC.innerHTML = todoCHTML
+        let completedTodoHTML = '';
+
+        completedTodos.forEach(todo => {
+            completedTodoHTML += getTodoCHTML(todo);
+        });
+
+        todoContC.innerHTML = completedTodoHTML;
     }
 
-    console.log("working")
+    console.log("Todos rendered successfully");
+}
+
+
+
+const unsubscribe = todoManager.subscribe((data) => {
+    renderTodos(data);
 
 });
 
 
+
+renderTodos({
+    todos: todoManager.getTodos(),
+    completedTodos: todoManager.getCompletedTodos()
+});
+
+
+
+todoForm.addEventListener('submit', e => {
+    e.preventDefault()
+    todoManager.addTodo(searchBar.value)
+})
+
+
+
+document.addEventListener('click', e => {
+    if (e.target.closest(".todoiconclass")) {
+        const targetId = e.target.id
+        const id = Number(String(targetId).slice(2))
+
+        if(targetId.match('c-')){
+            todoManager.markCompleted(id)
+        }else if(targetId.match('m-')){
+            todoManager.markUncompleted(id)
+        }else{
+            todoManager.removeTodo(id)
+        }
+        
+    }
+});
