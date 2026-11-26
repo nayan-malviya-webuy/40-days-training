@@ -31,11 +31,10 @@
     <footer class="cx-main-footer" id="footer-container"></footer>
 
 
-    <script src="public/js/service.js"></script>
-    <script src="public/js/main.js"></script>
-    <script src="public/js/home.js"></script>
-    <script src="public/js/search.js"></script>
-    <script>
+    <script type="module">
+        import { loadComponent, initHeader } from "./public/js/main.js";
+        import { initSearch } from "./public/js/search.js";
+        import { fetchAndRender } from "./public/js/home.js";
 
         Promise.all([
             loadComponent("header-container", "components/header.html"),

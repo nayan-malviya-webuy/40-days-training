@@ -1,38 +1,34 @@
-// import { fetchAndRender } from "./home.js";
-function initSearch() {
-    const cxSearchBar = document.querySelector("#cx-middle-search-bar");
+import { fetchAndRender } from "./home.js";
 
+export function initSearch() {
+    const query = new URLSearchParams(window.location.search).get('q');
+    // console.log("search is going to init for query  : " + query)
+
+    if (!query) {
+        window.location.href = '/html/index.html'
+        return;
+    }
+
+    const cxSearchBar = document.querySelector("#cx-middle-search-bar");
     if (!cxSearchBar) return;
 
-    const params = new URLSearchParams(window.location.search);
-    cxSearchBar.value = params.get('q') || '';
 
-    cxSearchBar.addEventListener('keydown', (e) => {
-        if (e.key !== 'Enter') return;
+
+    document.querySelector("#cx-search-cards-container").innerHTML = "";
+        fetchAndRender("cx-search-cards-container", `products/search?q=${query}`);
+
+
+    cxSearchBar.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
 
         const searchText = cxSearchBar.value.trim();
-
         if (!searchText) return;
 
         const encodedQuery = encodeURIComponent(searchText);
+        window.history.pushState({}, "", `${window.location.pathname}?q=${encodedQuery}`);
 
-        if (!window.location.pathname.includes('search.html')) {
-            window.location.href = `/html/search.html?q=${encodedQuery}`;
-            fetchAndRender(
-                'cx-search-cards-container',
-                `/products/search?q=${encodedQuery}`
-            );
-        } else {
-            const newUrl = `${window.location.pathname}?q=${encodedQuery}`;
+        document.querySelector("#cx-search-cards-container").innerHTML = "";
+        fetchAndRender("cx-search-cards-container", `products/search?q=${encodedQuery}`);
 
-            window.history.pushState({}, '', newUrl);
-
-
-            document.querySelector("#cx-search-cards-container").innerHTML = '';
-            fetchAndRender(
-                'cx-search-cards-container',
-                `/products/search?q=${encodedQuery}`
-            );
-        }
     });
 }

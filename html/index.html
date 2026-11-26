@@ -113,7 +113,7 @@
                     <span>
                         Smart Watch
                     </span>
-                </div>  
+                </div>
             </div>
 
         </section>
@@ -219,43 +219,32 @@
     <footer class="cx-main-footer" id="footer-container"></footer>
 
 
-    <script src="public/js/service.js"></script>
-    <script src="public/js/main.js"></script>
-    <script src="public/js/home.js"></script>
-    <script src="public/js/search.js"></script>
-    <script>
+
+    <script type="module">
+        import { loadComponent, initHeader } from "./public/js/main.js";
+        import { initSearch } from "./public/js/search.js";
+        import { fetchAndRender } from "./public/js/home.js";
 
         Promise.all([
             loadComponent("header-container", "components/header.html"),
             loadComponent("footer-container", "components/footer.html")
         ]).then(() => {
-            initHeader()
-            initSearch()
+            initHeader();
+            const searchInput = document.getElementById("cx-middle-search-bar");
+
+            searchInput.addEventListener("keyup", (e) => {
+                if(e.key === 'Enter'){
+                    window.location.href = '/html/search.html?q=' + searchInput.value
+                }
+            })
         });
 
-
-
-        // load recommended products from backend
-        fetchAndRender('cx-recommended-boxid', 'products?limit=7&skip=0');
-
-
-        // Recently Viewed
-        fetchAndRender('hot-product-boxid', 'products?limit=4&skip=10');
-
-
-
-        // load gammind section products
-        fetchAndRender('cx-gamming-boxid', 'products/search?q=headphones');
-
-        // load electronics Items
-        fetchAndRender('cx-electronics-boxid', 'products/category/mobile-accessories')
-
-
-        // load phones section
-        fetchAndRender('cx-phones-boxid', 'products/category/laptops')
-
-        // load computing section products
-        fetchAndRender('cx-computing-boxid', 'products/category/laptops')
+        fetchAndRender("cx-recommended-boxid", "products?limit=7&skip=0");
+        fetchAndRender("hot-product-boxid", "products?limit=4&skip=10");
+        fetchAndRender("cx-gamming-boxid", "products/search?q=headphones");
+        fetchAndRender("cx-electronics-boxid", "products/category/mobile-accessories");
+        fetchAndRender("cx-phones-boxid", "products/category/smartphones");
+        fetchAndRender("cx-computing-boxid", "products/category/laptops");
     </script>
 </body>
 
