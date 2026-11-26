@@ -177,10 +177,9 @@
 
 
 
-    
-    <script src="public/js/service.js"></script>
-    <script src="public/js/main.js"></script>
-    <script>
+    <script type="module">
+        import { loadComponent, initHeader } from "./public/js/main.js";
+
         Promise.all([
             loadComponent("header-container", "components/header.html"),
             loadComponent("footer-container", "components/footer.html")

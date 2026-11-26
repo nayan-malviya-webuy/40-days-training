@@ -2,7 +2,7 @@ const base_URL = 'https://dummyjson.com/';
 
 
 // Fetch Products
-async function fetchProducts(endPoint) {
+export async function fetchProducts(endPoint) {
     try {
         const resp = await fetch(base_URL + endPoint);
 
@@ -21,7 +21,7 @@ async function fetchProducts(endPoint) {
 }
 
 // /products/category-list
-async function fetchCategories(endPoint = '/products/category-list') {
+export async function fetchCategories(endPoint = 'products/category-list') {
     try {
         const resp = await fetch(base_URL + endPoint);
 
