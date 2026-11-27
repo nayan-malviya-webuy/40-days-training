@@ -1,4 +1,5 @@
 import { fetchCategories } from "./service.js";
+import { config } from "./config.js";
 
 export async function loadComponent(selecter, componentPath) {
     try {
@@ -14,7 +15,7 @@ export async function loadComponent(selecter, componentPath) {
     }
 }
 
-export function initHeader() {
+export function initHeader(showlinks = true) {
     const sidebar = document.querySelector("#leftSidebar");
     const openBtn = document.querySelector("#toggleSidebar");
     const closeBtn = document.querySelector("#closeSidebar");
@@ -33,6 +34,23 @@ export function initHeader() {
         console.error("Sidebar elements header.html mein nahi mile.");
     }
 
+
+
+    if (showlinks) {
+        // load navbar links
+        const navbar = document.getElementById("nav-container");
+
+        let navlinks = '<a href="index.html">Home</a>'
+        config.pages.forEach((page, index) => {
+            if (page.enable) {
+                navlinks += `<a href="${'category.html?superCatId=' + index + '&superCatName=' + page.name}">${page.name}</a>`
+            }
+        })
+
+        navbar.innerHTML = navlinks;
+    }
+
+
     // left sidebar categories
     if (leftCatBox) {
         fetchCategories().then(result => {
@@ -42,4 +60,26 @@ export function initHeader() {
                 .join("\n");
         });
     }
+
+    const offlineBanner = document.getElementById("cx-offline-banner");
+    const closeOfflineBtn = document.getElementById("cx-offline-close");
+
+
+    function checkNetworkStatus() {
+        if (navigator.onLine) {
+            offlineBanner.classList.remove("show");
+        } else {
+            offlineBanner.classList.add("show");
+        }
+    }
+
+    checkNetworkStatus();
+
+    window.addEventListener("online", checkNetworkStatus);
+    window.addEventListener("offline", checkNetworkStatus);
+
+    closeOfflineBtn.addEventListener("click", () => {
+        offlineBanner.classList.remove("show");
+    });
+
 }
