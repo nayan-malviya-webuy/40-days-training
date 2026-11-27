@@ -79,19 +79,18 @@ export async function fetchAndRender(contId, url) {
 
 
 
-export async function fetchAndRenderCats(contId) {
+export async function fetchAndRenderCats(contId, endopoint='products?limit=19&select=category,thumbnail') {
+    console.log(endopoint)
     const container = document.getElementById(contId);
     if (!container) return console.error(`Container "${contId}" not found!`);
     
-    const result = await fetchCategories('products?limit=19&select=category,thumbnail');
-    
+    const result = await fetchCategories(endopoint);
     
     if (!result || !result.products || result.products.length === 0) {
         container.innerHTML = "<span>Products not found</span>";
         return;
     }
     
-    console.log(result)
 
     for(let prod of result.products){
         renderCat(contId, prod.category, prod.thumbnail);

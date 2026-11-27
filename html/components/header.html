@@ -1,96 +1,129 @@
-<div>
-    <span>
-        <div id="toggleSidebar" class="cx-header-btn">
-            <i class="fa-solid fa-bars-staggered"></i>
-            <span>
-                Menu
-            </span>
-        </div>
-        <a href="/html/index.html"><img class="logo-img" src="/html/public/images/logo.png" alt="CEX"
-                class="mx-3 h-12" /></a>
-    </span>
-    <input id="cx-middle-search-bar" type="search" placeholder="What you want to buy?">
-
-    <span>
-        <div id="openModal" class="cx-header-btn">
-            <i class="fa-regular fa-user"></i>
-            <span>Account</span>
-        </div>
-        <a class="cx-header-btn" href="/html/basket.html" style="text-decoration: none;">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span>
-                Basket
-            </span>
-        </a>
-
-
-        <a href="sell.html">
-            <button class="cx-sell-btn">
-                Sell to CEX
-            </button>
-        </a>
-    </span>
-</div>
-
-<input id="second-row-search-bar" style="width: 85%; margin-top: 24px;" type="search"
-    placeholder="What you want to buy?">
-
-<nav>
-    <a href="index.html" class="link-active">Home</a>
-    <a href="profile_page.html">Profile</a>
-    <a href="registration_form.html">register</a>
-</nav>
-
-
-<!-- ############ leftsidebar  ############# -->
-<aside class="cx-left-sidebar" id="leftSidebar">
-    <h2>
-        <span class="cx-leftsidebar-heading">Menu</span>
-        <i class="fa-solid fa-x" id="closeSidebar"></i>
-    </h2>
-
-    <h2 class="cx-leftsidebar-heading" style="margin-top: 30px;margin-bottom: 20px;">
-        Buy
-    </h2>
-
-
-    <div class="cx-sidebar-catbox" id="cx-leftsidebar-catbox">
+<!-- ye tab dikhega jab offline hoga user -->
+<div class="cx-offline-banner" id="cx-offline-banner">
+    <div class="cx-offline-message">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <p>
+            <strong>You are Currently offline</strong>
+            <span>• Browse seamlessly once you are back online.</span>
+        </p>
     </div>
 
-    <hr>
-
-    <h2>
-        <span class="cx-leftsidebar-heading" style="margin-top: 20px;">Sell</span>
-    </h2>
-    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Trade in
-        Your
-        Item</button>
-
-    <hr>
-
-    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Find a
-        Store</button>
-    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Support</button>
-    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Careers</button>
-    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Franchising</button>
-    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Repairs</button>
-    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">About
-        CEX</button>
+    <button class="cx-offline-close" id="cx-offline-close" aria-label="Close offline banner">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>
 
 
-</aside>
 
-<!-- ############ Signin Model  ############# -->
-<div class="cx-auth-modal-overlay" id="cxauthmodal">
-    <div class="cx-auth-modal">
+<!-- Nearest Store wala strip ka code ye hai -->
+<div class="cx-top-strip">
+    <div class="cx-top-strip-content">
+        <i class="fa-solid fa-store"></i>
+        <span>Nearest Store: Use your current location</span>
+        <i class="fa-solid fa-angle-right"></i>
+    </div>
+</div>
 
-        <h2 class="cx-auth-modal-heading">
-            <span id="authTitle">Account sign in</span>
-            <button type="button" id="closeModal">&times;</button>
+
+
+
+
+
+<!-- This is our Actual Header -->
+<header>
+
+    <div>
+        <span>
+            <div id="toggleSidebar" class="cx-header-btn">
+                <i class="fa-solid fa-bars-staggered"></i>
+                <span>
+                    Menu
+                </span>
+            </div>
+            <a href="/html/index.html"><img class="logo-img" src="/html/public/images/logo.png" alt="CEX"
+                    class="mx-3 h-12" /></a>
+        </span>
+        <input id="cx-middle-search-bar" type="search" placeholder="What you want to buy?">
+
+        <span>
+            <div id="openModal" class="cx-header-btn">
+                <i class="fa-regular fa-user"></i>
+                <span>Account</span>
+            </div>
+            <a class="cx-header-btn" href="/html/basket.html" style="text-decoration: none;">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>
+                    Basket
+                </span>
+            </a>
+
+
+            <a href="sell.html">
+                <button class="cx-sell-btn">
+                    Sell to CEX
+                </button>
+            </a>
+        </span>
+    </div>
+
+    <input id="second-row-search-bar" style="width: 85%; margin-top: 24px;" type="search"
+        placeholder="What you want to buy?">
+
+    <nav id="nav-container">
+    </nav>
+
+
+    <!-- ############ leftsidebar  ############# -->
+    <aside class="cx-left-sidebar" id="leftSidebar">
+        <h2>
+            <span class="cx-leftsidebar-heading">Menu</span>
+            <i class="fa-solid fa-x" id="closeSidebar"></i>
         </h2>
 
-        <!-- sign in / sign up ka HTML yahan JS inject karega -->
-        <div class="cx-auth-modal-content" id="authBody"></div>
+        <h2 class="cx-leftsidebar-heading" style="margin-top: 30px;margin-bottom: 20px;">
+            Buy
+        </h2>
 
+
+        <div class="cx-sidebar-catbox" id="cx-leftsidebar-catbox">
+        </div>
+
+        <hr>
+
+        <h2>
+            <span class="cx-leftsidebar-heading" style="margin-top: 20px;">Sell</span>
+        </h2>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Trade in
+            Your
+            Item</button>
+
+        <hr>
+
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Find a
+            Store</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Support</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Careers</button>
+        <button class="cx-sidebar-catbox-btn"
+            style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Franchising</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Repairs</button>
+        <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">About
+            CEX</button>
+
+
+    </aside>
+
+    <!-- ############ Signin Model  ############# -->
+    <div class="cx-auth-modal-overlay" id="cxauthmodal">
+        <div class="cx-auth-modal">
+
+            <h2 class="cx-auth-modal-heading">
+                <span id="authTitle">Account sign in</span>
+                <button type="button" id="closeModal">&times;</button>
+            </h2>
+
+            <!-- sign in / sign up ka HTML yahan JS inject karega -->
+            <div class="cx-auth-modal-content" id="authBody"></div>
+
+        </div>
     </div>
-</div>
+</header>
