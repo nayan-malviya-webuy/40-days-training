@@ -1,4 +1,4 @@
-import { fetchProducts } from "./service.js";
+import { fetchProducts, fetchCategories } from "./service.js";
 
 export function renderProduct(cid, { thumburl, title, rating, category, price }) {
     try {
@@ -35,16 +35,19 @@ export function renderProduct(cid, { thumburl, title, rating, category, price })
     }
 }
 
-export function renderCat(cid, { name, image }) {
+export function renderCat(cid, name, image) {
     try {
         const container = document.getElementById(cid);
         if (!container) throw new Error(`Container "${cid}" not found!`);
 
         const catHTML = `
-            <div class="cx-cat-card">
-                <img src="${image}" alt="Cat Image">
-                <span>${name}</span>
+
+        <div class="cx-sell-category-card">
+            <div class="cx-sell-category-img">
+                <img src="${image}" alt="iPhone">
             </div>
+            <h3>${name}</h3>
+        </div>
         `;
         container.insertAdjacentHTML("beforeend", catHTML);
     } catch (error) {
@@ -72,4 +75,25 @@ export async function fetchAndRender(contId, url) {
             price: product.price
         });
     });
+}
+
+
+
+export async function fetchAndRenderCats(contId) {
+    const container = document.getElementById(contId);
+    if (!container) return console.error(`Container "${contId}" not found!`);
+    
+    const result = await fetchCategories('products?limit=19&select=category,thumbnail');
+    
+    
+    if (!result || !result.products || result.products.length === 0) {
+        container.innerHTML = "<span>Products not found</span>";
+        return;
+    }
+    
+    console.log(result)
+
+    for(let prod of result.products){
+        renderCat(contId, prod.category, prod.thumbnail);
+    }
 }

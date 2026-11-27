@@ -2,7 +2,6 @@ import { fetchAndRender } from "./home.js";
 
 export function initSearch() {
     const query = new URLSearchParams(window.location.search).get('q');
-    // console.log("search is going to init for query  : " + query)
 
     if (!query) {
         window.location.href = '/html/index.html'
@@ -12,8 +11,7 @@ export function initSearch() {
     const cxSearchBar = document.querySelector("#cx-middle-search-bar");
     if (!cxSearchBar) return;
 
-
-
+    cxSearchBar.value = query
     document.querySelector("#cx-search-cards-container").innerHTML = "";
         fetchAndRender("cx-search-cards-container", `products/search?q=${query}`);
 

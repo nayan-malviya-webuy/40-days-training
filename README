@@ -1,0 +1,10 @@
+# 40 Days Training
+
+This repository contains my daily tasks, practice exercises, and projects completed during the 40 Days Training Program.
+
+## Folder Structure
+
+- **html/** – CeX website clone built using HTML, CSS, and Vanilla JavaScript. Includes multiple pages and concepts covered in daily training tasks.
+- **js/** – Topic-wise JavaScript practice, including Fetch API, Event Bubbling, Modules, Error Handling, and more.
+- **vanilla_js_todo_app/** – Todo application built using HTML, CSS, and Vanilla JavaScript.
+- **vue/** – Vue.js learning exercises and upcoming projects.
