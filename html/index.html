@@ -236,7 +236,7 @@
             const searchInput = document.getElementById("cx-middle-search-bar");
 
             searchInput.addEventListener("keyup", (e) => {
-                if (e.key === 'Enter') {
+                if (e.keyCode === 13) {
                     window.location.href = '/html/search.html?q=' + searchInput.value
                 }
             })
