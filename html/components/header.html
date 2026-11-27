@@ -16,17 +16,19 @@
             <i class="fa-regular fa-user"></i>
             <span>Account</span>
         </div>
-        <div class="cx-header-btn">
+        <a class="cx-header-btn" href="/html/basket.html" style="text-decoration: none;">
             <i class="fa-solid fa-bag-shopping"></i>
             <span>
                 Basket
             </span>
-        </div>
+        </a>
 
 
-        <button class="cx-sell-btn">
-            Sell to CEX
-        </button>
+        <a href="sell.html">
+            <button class="cx-sell-btn">
+                Sell to CEX
+            </button>
+        </a>
     </span>
 </div>
 
@@ -81,8 +83,14 @@
 <!-- ############ Signin Model  ############# -->
 <div class="cx-auth-modal-overlay" id="cxauthmodal">
     <div class="cx-auth-modal">
-        <button id="closeModal">✕</button>
-        <!-- model content -->
-        <h1>Hello Modal</h1>
+
+        <h2 class="cx-auth-modal-heading">
+            <span id="authTitle">Account sign in</span>
+            <button type="button" id="closeModal">&times;</button>
+        </h2>
+
+        <!-- sign in / sign up ka HTML yahan JS inject karega -->
+        <div class="cx-auth-modal-content" id="authBody"></div>
+
     </div>
 </div>

@@ -237,18 +237,43 @@ body:has(.cx-left-sidebar.open)::before {
 /* ###################################################### */
 
 
-/* ############## Sign in Modal Code ############## */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############## Auth Modal ############## */
 .cx-auth-modal-overlay {
+    --auth-red: #e30a00;
+    --auth-input-bg: #f5f5f5;
+
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-start;
+    padding: 30px 12px 24px;
+    overflow-y: auto;
     z-index: 2000;
-
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -260,21 +285,207 @@ body:has(.cx-left-sidebar.open)::before {
 }
 
 .cx-auth-modal {
-    background-color: var(--secondary);
-    width: 250px;
-    max-height: 90vh;
-    padding: 30px;
+    background-color: var(--secondary, #fff);
+    color: var(--tertiary);
+    width: 100%;
+    max-width: 460px;
+    padding: 28px;
     border-radius: 20px;
-
     transform: scale(0.9);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, max-width 0.2s ease;
 }
 
-.cx-auth-modal-overlay.open .cx-auth-modal {
-    transform: scale(1);
+.cx-auth-modal.wide { max-width: 520px; }
+
+.cx-auth-modal-overlay.open .cx-auth-modal { transform: scale(1); }
+
+.cx-auth-modal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    width: 100%;
+    font-weight: 800;
+}
+
+.cx-auth-modal-heading button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.cx-auth-modal-link {
+    margin-bottom: 12px;
+    font-size: 0.98rem;
+}
+
+.cx-auth-link-btn,
+.cx-auth-modal a {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 6px;
+    font: inherit;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cx-auth-link-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.cx-auth-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+    flex: 1;
+    min-width: 0;
+}
+
+.cx-auth-form-group label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.cx-auth-row {
+    display: flex;
+    gap: 14px;
+}
+
+.cx-auth-form-group input,
+.cx-auth-phone,
+.cx-auth-phone select {
+    font: inherit;
+    border: 1px solid transparent;
+    background: var(--auth-input-bg);
+    outline: none;
+}
+
+.cx-auth-form-group > input,
+.cx-auth-password-wrapper input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 30px;
+}
+
+.cx-auth-form-group input:focus,
+.cx-auth-phone:focus-within {
+    border-color: #999;
+}
+
+.cx-auth-password-wrapper { position: relative; }
+.cx-auth-password-wrapper input { padding-right: 46px; }
+
+.cx-auth-eye {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cx-auth-phone {
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.cx-auth-phone select {
+    border: none;
+    border-right: 1px solid #e2e2e2;
+    padding: 14px 10px 14px 18px;
+    cursor: pointer;
+}
+
+.cx-auth-phone input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    padding: 14px 16px;
+}
+
+.cx-auth-forgot-password {
+    display: inline-block;
+    margin: 0 0 16px 0 !important;
+    font-size: 0.9rem;
+}
+
+.cx-auth-check {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    cursor: pointer;
+}
+
+.cx-auth-check input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--auth-red);
+}
+
+.cx-auth-check a { margin-left: 0; font-weight: 400; }
+
+.cx-auth-msg {
+    min-height: 20px;
+    margin: 4px 0 8px;
+    font-size: 0.88rem;
+    color: var(--auth-red);
+}
+.cx-auth-msg.success { color: #1a8f3c; }
+
+.cx-auth-submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: var(--auth-red);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.cx-auth-submit-btn:hover { opacity: 0.9; }
+.cx-auth-submit-btn:disabled { opacity: 0.6; cursor: wait; }
+
+@media (max-width: 520px) {
+    .cx-auth-modal { padding: 20px; }
+    .cx-auth-row { flex-direction: column; gap: 0; }
 }
 
 /* ################################################ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -716,3 +927,215 @@ body:has(.cx-left-sidebar.open)::before {
         font-size: 14px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+.cx-basket-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 18px;
+}
+
+.cx-basket-container > h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############## Sell Category Section ############## */
+
+.cx-sell-main-section {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-width: 0;
+    flex: 0 0 100%;
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-align: center;
+    padding: 20px 20px 40px;
+    margin-top: 60px;
+}
+
+.cx-sell-main-section > h1 {
+    width: 100%;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.cx-sell-subtitle {
+    width: 100%;
+    font-size: 20px;
+}
+
+.cx-sell-search-container {
+    width: 60%;
+    max-width: 850px;
+    height: 56px;
+    background-color: var(--secondary);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.cx-sell-search-container input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font: inherit;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.cx-sell-search-container i {
+    font-size: 22px;
+    color: var(--tertiary);
+    cursor: pointer;
+}
+
+.cx-sell-category-heading {
+    width: 100%;
+    font-size: 20px;
+}
+
+.cx-sell-category-container {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 30px;
+    gap: 60px 30px;
+}
+
+.cx-sell-category-card {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cx-sell-category-img {
+    width: 100%;
+    height: 195px;
+    background-color: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.cx-sell-category-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.cx-sell-category-card h3 {
+    width: 100%;
+    min-height: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.cx-sell-category-card:hover .cx-sell-category-img {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 1100px) {
+    .cx-sell-category-container {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .cx-sell-category-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 35px 16px;
+        padding: 0 16px;
+    }
+
+    .cx-sell-category-img {
+        height: 150px;
+    }
+
+    .cx-sell-search-container {
+        width: 90%;
+    }
+
+    .cx-sell-main-section > h1 {
+        font-size: 32px;
+    }
+
+    .cx-sell-subtitle,
+    .cx-sell-category-heading {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cx-sell-category-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 12px;
+    }
+
+    .cx-sell-category-img {
+        height: 140px;
+        padding: 14px;
+    }
+
+    .cx-sell-category-card h3 {
+        font-size: 14px;
+    }
+
+    .cx-sell-search-container {
+        width: 100%;
+    }
+
+    .cx-sell-main-section > h1 {
+        font-size: 27px;
+    }
+}
+
+/* ################################################ */

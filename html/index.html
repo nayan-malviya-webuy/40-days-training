@@ -224,16 +224,19 @@
         import { loadComponent, initHeader } from "./public/js/main.js";
         import { initSearch } from "./public/js/search.js";
         import { fetchAndRender } from "./public/js/home.js";
+        import { initAuth } from "./public/js/auth.js";
+
 
         Promise.all([
             loadComponent("header-container", "components/header.html"),
             loadComponent("footer-container", "components/footer.html")
         ]).then(() => {
             initHeader();
+            initAuth()
             const searchInput = document.getElementById("cx-middle-search-bar");
 
             searchInput.addEventListener("keyup", (e) => {
-                if(e.key === 'Enter'){
+                if (e.key === 'Enter') {
                     window.location.href = '/html/search.html?q=' + searchInput.value
                 }
             })

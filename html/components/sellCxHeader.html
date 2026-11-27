@@ -1,0 +1,117 @@
+<div>
+    <span>
+        <div id="toggleSidebar" class="cx-header-btn">
+            <i class="fa-solid fa-bars-staggered"></i>
+            <span>
+                Menu
+            </span>
+        </div>
+        <a href="/html/index.html"><img class="logo-img" src="/html/public/images/logo.png" alt="CEX"
+                class="mx-3 h-12" /></a>
+    </span>
+    <input id="cx-middle-search-bar" type="search" placeholder="What you want to buy?">
+
+    <span>
+        <div id="openModal" class="cx-header-btn">
+            <i class="fa-regular fa-user"></i>
+            <span>Account</span>
+        </div>
+        <a class="cx-header-btn" href="/html/basket.html" style="text-decoration: none;">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>
+                Basket
+            </span>
+        </a>
+
+
+        <button class="cx-sell-btn">
+            Buy from CEX
+        </button>
+    </span>
+</div>
+
+
+<div class="cx-sell-main-section">
+
+    <h1>Make money selling to CeX</h1>
+
+    <p class="cx-sell-subtitle">
+        Find the product you'd like to trade-in for cash or voucher
+    </p>
+
+    <div class="cx-sell-search-container">
+        <input type="search" placeholder="What do you want to sell?">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <p class="cx-sell-category-heading">
+        Or find your item from selected categories below
+    </p>
+
+    <div class="cx-sell-category-container" id="cx-sell-cat-container">
+
+        <!-- 14 cats chahiye total -->
+        <!-- <div class="cx-sell-category-card">
+            <div class="cx-sell-category-img">
+                <img src="images/iphone.png" alt="iPhone">
+            </div>
+            <h3>iPhones Non Working</h3>
+        </div> -->
+
+    </div>
+
+</div>
+
+
+<!-- ############ leftsidebar  ############# -->
+<aside class="cx-left-sidebar" id="leftSidebar">
+    <h2>
+        <span class="cx-leftsidebar-heading">Menu</span>
+        <i class="fa-solid fa-x" id="closeSidebar"></i>
+    </h2>
+
+    <h2 class="cx-leftsidebar-heading" style="margin-top: 30px;margin-bottom: 20px;">
+        Buy
+    </h2>
+
+
+    <div class="cx-sidebar-catbox" id="cx-leftsidebar-catbox">
+    </div>
+
+    <hr>
+
+    <h2>
+        <span class="cx-leftsidebar-heading" style="margin-top: 20px;">Sell</span>
+    </h2>
+    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Trade in
+        Your
+        Item</button>
+
+    <hr>
+
+    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Find a
+        Store</button>
+    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Support</button>
+    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Careers</button>
+    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Franchising</button>
+    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">Repairs</button>
+    <button class="cx-sidebar-catbox-btn" style="width: 100%;margin-top: 20px;margin-bottom: 20px;">About
+        CEX</button>
+
+
+</aside>
+
+<!-- ############ Signin Model  ############# -->
+<div class="cx-auth-modal-overlay" id="cxauthmodal">
+    <div class="cx-auth-modal">
+
+        <h2 class="cx-auth-modal-heading">
+            <span id="authTitle">Account sign in</span>
+            <button type="button" id="closeModal">&times;</button>
+        </h2>
+
+        <!-- sign in / sign up ka HTML yahan JS inject karega -->
+        <div class="cx-auth-modal-content" id="authBody"></div>
+
+    </div>
+</div>

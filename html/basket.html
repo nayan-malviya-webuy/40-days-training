@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayan Malviya - CEX (Complete Entertainment Exchange)</title>
+    <link rel="stylesheet" href="public/styles/style.css">
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="public/styles/home_page.css">
+</head>
+
+<body>
+
+    <header id="header-container"></header>
+
+    <!-- this is the main section -->
+    <main class="cx-home-main-container">
+
+        <!-- courosels and banner section -->
+        <section class="cx-home-section home-top-banners-section">
+            <div class="cx-basket-container">
+                <h2>Basket</h2>
+                <span>
+                    Your basket is empty.
+                </span>
+                <button class="cx-sell-btn" style="background-color: #e20a03;color: #fff;padding: 12px 10px;">
+                    Continue Shopping
+                </button>
+            </div>
+        </section>
+
+        <!-- recommended for you sectoin -->
+        <section class="cx-home-section">
+            <h2 class="cx-section-heading">Recommended for you</h2>
+
+            <div class="section-products-box slide-product-cont" id="cx-recommended-boxid">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="cx-main-footer" id="footer-container"></footer>
+
+
+
+    <script type="module">
+        import { loadComponent, initHeader } from "./public/js/main.js";
+        import { initSearch } from "./public/js/search.js";
+        import { fetchAndRender } from "./public/js/home.js";
+        import { initAuth } from "./public/js/auth.js";
+
+
+        Promise.all([
+            loadComponent("header-container", "components/header.html"),
+            loadComponent("footer-container", "components/footer.html")
+        ]).then(() => {
+            initHeader();
+            initAuth()
+            const searchInput = document.getElementById("cx-middle-search-bar");
+
+            searchInput.addEventListener("keyup", (e) => {
+                if (e.key === 'Enter') {
+                    window.location.href = '/html/search.html?q=' + searchInput.value
+                }
+            })
+        });
+
+        fetchAndRender("cx-recommended-boxid", "products?limit=7&skip=0");
+    </script>
+</body>
+
+</html>
